@@ -1,4 +1,4 @@
-const API_BASE = import.meta.env.VITE_API_BASE_URL || 'http://localhost:8000'
+const API_BASE = import.meta.env.VITE_API_BASE_URL || 'http://localhost:8000/'
 
 /**
  * Runs step 1-2 of the flow: send the requirement (as pasted text or a
@@ -17,7 +17,7 @@ export async function analyzeRequirement({ text, file }) {
 
   let res
   try {
-    res = await fetch(`${API_BASE}/api/analyze`, { method: 'POST', body: form })
+    res = await fetch(`${API_BASE}api/analyze`, { method: 'POST', body: form })
   } catch {
     throw new Error('Could not reach the server. Check your connection and try again.')
   }
